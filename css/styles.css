@@ -19,4 +19,121 @@ body {
 
 canvas {
     background-color: #111;
+    border: 2px solid #111;
+    border-radius: 10px;
+    
+}
+
+.score {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.score-value {
+    font-weight: 600;
+    font-size: 4rem;
+    display: block;
+    margin-top: -8px;
+}
+
+.game-over-screen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 8rem; */
+    z-index: 1;
+}
+
+.game-over {
+    text-transform: uppercase;
+    color: 	rgb(255, 0, 0);
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.final-score {
+    font-weight: 500;
+    font-size: 1.5rem;
+
+}
+
+.btn-play {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.btn-play:hover {
+    color: black;
+}
+
+.btn-play:active {
+    box-shadow: -1px -2px 0 #222;
+    font-size: 0.95rem;
+}
+
+.start-menu {
+    /* margin-top: 8rem; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    align-items: center;
+}
+
+.start-game {
+    font-weight: 700;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+}
+
+.btn-start {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.btn-start:hover {
+    color: lightgreen;
+}
+
+.btn-start:active {
+    box-shadow: -1px -2px 0 #222;
+    font-size: 0.95rem;
+}
+
+.stop-screen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.game-stoped {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
 }

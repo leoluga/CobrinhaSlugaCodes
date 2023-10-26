@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./css/styles.css">
 
     <title>Cobrinha Sluga Codes</title>
 </head>
 <body>
-    
+    <div class="score">score: <span class="score-value">00</span></div>
+
+    <div class="start-menu">
+        <span class="start-game">Start Game</span>
+
+        <button class="btn-start">Start</button>
+    </div>
+
+    <div class="stop-screen">
+        <span class="game-stoped">- Game Stoped -</span>
+        <span>Press ENTER to continue playing.</span>
+    </div>
+
+    <div class="game-over-screen">
+        <span class="game-over">game over</span>
+
+        <span class="final-score">score <span>00</span></span>
+
+        <button class="btn-play">
+            Play Again
+        </button>
+    </div>
     <canvas width = "600" height="600"></canvaswidth></canvas>
 
     <script src="./js/scripts.js"></script>
