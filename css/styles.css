@@ -21,6 +21,8 @@ canvas {
     background-color: #111;
     border: 2px solid #111;
     border-radius: 10px;
+    position: relative;
+    margin-top: 20px;
     
 }
 
@@ -75,7 +77,7 @@ canvas {
     cursor: pointer;
 }
 .btn-play:hover {
-    color: black;
+    color: rgb(191, 0, 255);
 }
 
 .btn-play:active {
@@ -137,3 +139,57 @@ canvas {
     font-size: 2rem;
     text-transform: uppercase;
 }
+
+
+
+  #game-container {
+    position: absolute;
+    width: 650px; /* Adjust as needed */
+    height: 1000px; /* Adjust as needed */
+  }
+  
+  #rectangle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Semi-transparent black */
+    z-index: -1; /* Behind the canvas */
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    color: #ffffff;
+    top: -10px;
+    /* right: 300px; */
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #cccccc4a;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+  
+  #menu h3 {
+    margin-top: 0;
+  }
+
+  #menu button {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  #menu button:hover {
+    background-color: #eee;
+  }

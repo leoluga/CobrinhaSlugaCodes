@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-
-    <title>Cobrinha Sluga Codes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Snake Sluga Codes</title>
 </head>
 <body>
-    <div class="score">score: <span class="score-value">00</span></div>
+
+    
+
+    <!-- <div class="score">score: <span class="score-value">00</span></div> -->
 
     <div class="start-menu">
         <span class="start-game">Start Game</span>
@@ -30,8 +33,37 @@
             Play Again
         </button>
     </div>
-    <canvas width = "600" height="600"></canvaswidth></canvas>
+    <canvas width = "600" height="900"></canvaswidth></canvas>
+
+    <div id="game-container">
+        <div id="rectangle-container"></div>
+        <div id="menu">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            <br>
+            <label for="gridSize">Grid Size:</label>
+            <input type="number" id="gridSize" value="4">
+            <br>
+            <button onclick="startGame()" title="Start Game">
+                <i class="fas fa-play"></i>
+            </button>
+            <button onclick="pauseGame()" title="Pause Game">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button onclick="resumeGame()" title="Resume Game">
+                <i class="fas fa-play-circle"></i>
+            </button>
+            <br>
+            <div>Score: <span id="score">0</span></div>
+        </div>
+    </div>
 
     <script src="./js/scripts.js"></script>
+
+
 </body>
 </html>
