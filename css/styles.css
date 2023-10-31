@@ -217,3 +217,16 @@ body {
   .score-div {
     font-size: clamp(4px, 4vw, 20px);
   }
+
+  .gamepad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px;
+    /* margin-left: 7%; */
+    margin-bottom: 1rem;
+    margin-left: 0.7rem;
+  }
+
+  .gamepad .button {
+    width: 5em;  
+  }

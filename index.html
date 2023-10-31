@@ -61,10 +61,21 @@
         </div>
         <canvas id="canvas" width = "600" height="900"></canvaswidth></canvas>
 
-        <button id="left-button" onclick="moveLeft()"><-</button>
-        <button id="up-button" onclick="moveUp()">^</button>
-        <button id="down-button" onclick="moveDown()">v</button>
-        <button id="right-button" onclick="moveRight()">></button>
+        <div class="gamepad">
+            <button class="gamepad button left" onclick="moveLeft()" title="Arrow Left">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="gamepad button up" onclick="moveUp()" title="Arrow Up">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+            <button class="gamepad button down" onclick="moveDown()" title="Arrow Down">
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+            <button class="gamepad button right" onclick="moveRight()" title="Arrow Right">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        
         
 
     </div>

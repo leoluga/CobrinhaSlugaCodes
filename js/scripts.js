@@ -12,16 +12,28 @@ const buttonPlay = document.querySelector(".btn-play")
 
 const buttonStart = document.querySelector(".btn-start")
 
-const difficulty = document.getElementById('difficulty').value;
-const gridSize = document.getElementById('gridSize').value;
+
+
 
 console.log(difficulty, gridSize)
 
 
 const audio = new Audio('../assets/audio.mp3')
-const size = 30
 
 
+
+const checkSize = () => {
+    const gridSize = document.getElementById('gridSize').value;
+    if (gridSize == "small") {
+        size = 30
+    }
+    else if (gridSize == "medium") {
+        size = 45
+    }
+    else if (gridSize == "large") {
+        size = 60
+    }
+}
 
 const addScore = () => {
     score.innerText = +score.innerText + 1
@@ -31,14 +43,14 @@ const randomNumber = (min, max) => {
     return Math.round(Math.random()*(max - min) + min)
 }
 
-const randomxPosition = () =>{
-    const number = randomNumber(1, canvas.width - size)
-    return Math.round(number / size) * size
+const randomxPosition = (grid_size) =>{
+    const number = randomNumber(1, canvas.width - grid_size)
+    return Math.round(number / grid_size) * grid_size
 }
 
-const randomyPosition = () =>{
-    const number = randomNumber(1, canvas.height - size)
-    return Math.round(number / size) * size
+const randomyPosition = (grid_size) =>{
+    const number = randomNumber(1, canvas.height - grid_size)
+    return Math.round(number / grid_size) * grid_size
 }
 
 const randomColor = () => {
@@ -49,17 +61,33 @@ const randomColor = () => {
     return `rgb(${red}, ${green}, ${blue})`
 }
 
+
+let direction, loopId, prevDirection, speed, size, snake
+
+checkSize()
+
+const initialPosition = {x : randomxPosition(size), y: randomyPosition(size)}
+
 const food = {
-    x: randomxPosition(), 
-    y: randomyPosition(),
-    color : randomColor()
+    x: randomxPosition(size), 
+    y: randomyPosition(size),
+    color : randomColor(size)
 }
 
-let direction, loopId, prevDirection, speed
+snake = [initialPosition]
 
-const initialPosition = {x : randomxPosition(), y: randomyPosition()}
+const resetPositions = () => {
+    checkSize()
 
-let snake = [initialPosition]
+    initialPosition.x = randomxPosition(size), 
+    initialPosition.y = randomyPosition(size)
+
+    food.x = randomxPosition(size)
+    food.y = randomyPosition(size)
+
+    snake = [initialPosition]
+}
+
 
 let gameOn = false
 
@@ -110,6 +138,8 @@ const moveSnake = () => {
 }
 
 const drawGrid = (width, blur) => {
+    checkSize()
+    console.log(size)
     ctx.lineWidth = width
     ctx.strokeStyle = "green"
     ctx.shadowColor = "white"
@@ -131,12 +161,13 @@ const drawGrid = (width, blur) => {
 }
 
 const changeFoodPosition = () => {
-    let x = randomxPosition()
-    let y = randomyPosition()
+    checkSize()
+    let x = randomxPosition(size)
+    let y = randomyPosition(size)
 
     while (snake.find((position) => position.x == x && position.y == y)) {
-        x = randomxPosition()
-        y = randomyPosition()
+        x = randomxPosition(size)
+        y = randomyPosition(size)
     }
     food.x = x
     food.y = y
@@ -195,12 +226,14 @@ const gameOver = () => {
 }
 
 const gameStop = () => {
-    prevDirection = direction
-    stopScreen.style.display = "flex"
-    direction = undefined
-    gameOn = false
-    gameLost = true
-    canvas.style.filter = "blur(2px)"
+    if (gameOn) {
+        prevDirection = direction
+        stopScreen.style.display = "flex"
+        direction = undefined
+        gameOn = false
+        gameLost = true
+        canvas.style.filter = "blur(2px)"
+    }
 }
 
 const gameContinue = () => {
@@ -211,8 +244,10 @@ const gameContinue = () => {
 }
 
 const gameLoop = () => {
+    
     clearInterval(loopId)
     ctx.clearRect(0,0, canvas.width, canvas.height)
+    checkSize()
     drawGrid(0.3, 0)
     drawFood()
     moveSnake()
@@ -220,8 +255,6 @@ const gameLoop = () => {
     checkEat()
     checkCollision()
     checkSpeed()
-    
-    console.log(speed)
     loopId = setTimeout(() => {
         gameLoop()
     }, speed)
@@ -231,6 +264,7 @@ drawGrid(0.3, 0)
 canvas.style.filter = "blur(0.8px)"
 
 buttonStart.addEventListener("click", () => {
+    resetPositions()
     gameOn = true
     startMenu.style.display = "none"
     gameLoop()
@@ -238,6 +272,7 @@ buttonStart.addEventListener("click", () => {
 
 
 buttonPlay.addEventListener("click", () => {
+    resetPositions()
     gameOn = true
     score.innerText = "00"
     gameOverMenu.style.display = "none"
