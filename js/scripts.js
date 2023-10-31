@@ -191,6 +191,7 @@ const gameOver = () => {
     finalScore.innerText = score.innerText
     canvas.style.filter = "blur(2px)"
     gameOn = false
+    gameLost = true
 }
 
 const gameStop = () => {
@@ -235,19 +236,6 @@ buttonStart.addEventListener("click", () => {
     gameLoop()
 })
 
-function startGame() {
-    gameOn = true
-    startMenu.style.display = "none"
-    gameLoop()
-}
-
-function pauseGame() {
-    gameStop()
-}
-
-function resumeGame() {
-    gameContinue()
-}
 
 buttonPlay.addEventListener("click", () => {
     gameOn = true
@@ -278,3 +266,24 @@ document.addEventListener("keydown", ({key}) => {
         gameContinue()
     }
 })
+
+const moveLeft = () => {
+    if (gameOn == true && direction != "right") {
+        direction = "left"
+    }
+}
+const moveRight = () => {
+    if (gameOn == true && direction != "left") {
+        direction = "right"
+    }
+}
+const moveUp = () => {
+    if (gameOn == true && direction != "down") {
+        direction = "up"
+    }
+}
+const moveDown = () => {
+    if (gameOn == true && direction != "up") {
+        direction = "down"
+    }
+}

@@ -43,18 +43,30 @@
             </select>
             <br>
             <label for="gridSize">Grid Size:</label>
-            <input type="number" id="gridSize" value="4">
+            <!-- <input type="number" id="gridSize" value="4"> -->
+            <select id="gridSize">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Big</option>
+              </select>
             <br>
-            <button onclick="pauseGame()" title="Pause Game">
+            <button onclick="gameStop()" title="Pause Game">
                 <i class="fas fa-pause"></i>
             </button>
-            <button onclick="resumeGame()" title="Resume Game">
+            <button onclick="gameContinue()" title="Resume Game">
                 <i class="fas fa-play-circle"></i>
             </button>
             <br>
             <div class="score-div">Score: <span id="score">0</span></div>
         </div>
         <canvas id="canvas" width = "600" height="900"></canvaswidth></canvas>
+
+        <button id="left-button" onclick="moveLeft()"><-</button>
+        <button id="up-button" onclick="moveUp()">^</button>
+        <button id="down-button" onclick="moveDown()">v</button>
+        <button id="right-button" onclick="moveRight()">></button>
+        
+
     </div>
 
     <script src="./js/scripts.js"></script>

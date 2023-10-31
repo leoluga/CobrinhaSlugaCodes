@@ -13,18 +13,19 @@ body {
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: aliceblue;
 }
 
 
 
 .game-over-screen {
+
     position: absolute;
     display: none;
     flex-direction: column;
     align-items: center;
-    /* margin-top: 8rem; */
+    margin-top: clamp(100px,60vw,300px);
     z-index: 1;
 }
 
@@ -32,20 +33,20 @@ body {
     text-transform: uppercase;
     color: 	rgb(255, 0, 0);
     font-weight: 700;
-    font-size: clamp(8px, 8vw, 60px);
+    font-size: clamp(8px, 8vw, 50px);
 }
 
 .final-score {
     font-weight: 500;
-    font-size: clamp(8px, 8vw, 60px);
+    font-size: clamp(8px, 8vw, 40px);
 
 }
 
 .btn-play {
     border: none;
-    border-radius: 10px;
+    border-radius: 10%;
     padding: 10px 15px 10px 12px;
-    font-size: clamp(8px, 5vw, 25px);;
+    font-size: clamp(4px, 5vw, 20px);;
     font-weight: 600;
     color: #333;
     margin-top: 40px;
@@ -71,6 +72,8 @@ body {
     flex-direction: column;
     z-index: 2;
     align-items: center;
+    /* margin-top: 15rem; */
+    margin-top: clamp(100px,60vw,250px);
 }
 
 .start-game {
@@ -113,6 +116,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    margin-top: clamp(150px,70vw,300px);
 }
 
 .game-stoped {
@@ -130,26 +134,26 @@ body {
     position: relative;
     width: 80%; /* Adjust as needed */
     height: 85%; /* Adjust as needed */
-    background-color: moccasin;
+    background-color: rgb(255, 228, 181);
     max-height: 700px;
-    max-width: 490px;
-    border-radius: 10px;
-    margin: 10px;
+    max-width: 470px;
+    border-radius: 8px;
+    margin-top: 2rem;
   }
 
   #canvas {
-    background-color: #111;
+    background-color: #111111f6;
     border: 2px solid #111;
     border-radius: 5px;
     position: relative;
     
-    margin-top: 4%;
+    margin-top: 2%;
     margin-left: 2.5%;
+    margin-bottom: 3%;
     width: 95%;
-    height: 80%;
+    height: 60%;
     max-width: 500px;
     max-height: 600px;
-    
   }
   
   #menu {
@@ -158,17 +162,17 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1px;
+    gap: 2px;
     position: relative;
     color: #000000;
     top: 0px;
     background-color: rgba(0,0,0,0.1);
     border: 1px solid #cccccc4a;
     border-radius: 3px;
-    padding: 6px;
+    padding: 3px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 2;
-    font-size: 3vw;
+    font-size: clamp(1px, 2vw, 15px);
   }
   
   #menu h3 {
@@ -176,7 +180,7 @@ body {
   }
 
   #menu button {
-    font-size: 16px;
+    font-size: clamp(3px, 4vw, 16px);
     padding: 5px 10px;
     border: none;
     background-color: transparent;
@@ -195,21 +199,21 @@ body {
   #difficulty {
     width: 15vw;
     max-width: 80px;
-    height: 3vh;
-    font-size: clamp(1px, 2vw, 15px);
+    height: 2.5vh;
+    font-size: clamp(1px, 2vw, 12px);
   }
 
   #gridSize {
     width: 15vw;
-    max-width: 60px;
-    height: 3vh;
-    font-size: clamp(1px, 2vw, 15px);
+    max-width: 80px;
+    height: 2.5vh;
+    font-size: clamp(1px, 2vw, 12px);
   }
 
   #score {
-    font-size: clamp(1px, 2vw, 15px);
+    font-size: clamp(4px, 4vw, 20px);
   }
 
   .score-div {
-    font-size: clamp(1px, 2vw, 15px);
+    font-size: clamp(4px, 4vw, 20px);
   }
