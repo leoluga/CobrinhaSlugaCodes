@@ -32,12 +32,12 @@ body {
     text-transform: uppercase;
     color: 	rgb(255, 0, 0);
     font-weight: 700;
-    font-size: 8vw;
+    font-size: clamp(8px, 8vw, 60px);
 }
 
 .final-score {
     font-weight: 500;
-    font-size: 6vw;
+    font-size: clamp(8px, 8vw, 60px);
 
 }
 
@@ -45,7 +45,7 @@ body {
     border: none;
     border-radius: 10px;
     padding: 10px 15px 10px 12px;
-    font-size: 1rem;
+    font-size: clamp(8px, 5vw, 25px);;
     font-weight: 600;
     color: #333;
     margin-top: 40px;
@@ -74,8 +74,9 @@ body {
 }
 
 .start-game {
+    margin-top: 10%;
     font-weight: 700;
-    font-size: 8vw;
+    font-size: clamp(8px, 8vw, 50px);;
     text-transform: uppercase;
 
 }
@@ -84,7 +85,7 @@ body {
     border: none;
     border-radius: 10px;
     padding: 10px 15px 10px 12px;
-    font-size: 1rem;
+    font-size: clamp(8px, 5vw, 25px);
     font-weight: 600;
     color: #333;
     margin-top: 40px;
@@ -93,6 +94,7 @@ body {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+    height: 6%;
 }
 
 .btn-start:hover {
@@ -101,7 +103,7 @@ body {
 
 .btn-start:active {
     box-shadow: -1px -2px 0 #222;
-    font-size: 0.95rem;
+    font-size: clamp(8px, 5vw, 25px);;
 }
 
 .stop-screen {
@@ -115,8 +117,12 @@ body {
 
 .game-stoped {
     font-weight: 600;
-    font-size: 6vw;
+    font-size: clamp(8px, 5vw, 25px);
     text-transform: uppercase;
+}
+
+.enter-continue {
+    font-size: clamp(2px, 2vw, 20px);
 }
 
 
@@ -140,8 +146,8 @@ body {
     margin-top: 4%;
     margin-left: 2.5%;
     width: 95%;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 400em;
+    max-height: 300%;
     height: 92%;
   }
   
@@ -181,14 +187,28 @@ body {
     background-color: #eee;
   }
 
+  label {
+    font-size: clamp(1px, 2vw, 15px);
+  }
+
   #difficulty {
     width: 15vw;
+    max-width: 80px;
     height: 3vh;
-    font-size: 2vw;
+    font-size: clamp(1px, 2vw, 15px);
   }
 
   #gridSize {
     width: 15vw;
+    max-width: 80px;
     height: 3vh;
-    font-size: 2vw;
+    font-size: clamp(1px, 2vw, 15px);
+  }
+
+  #score {
+    font-size: clamp(1px, 2vw, 15px);
+  }
+
+  .score-div {
+    font-size: clamp(1px, 2vw, 15px);
   }
