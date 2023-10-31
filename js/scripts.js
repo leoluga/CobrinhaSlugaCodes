@@ -19,7 +19,7 @@ console.log(difficulty, gridSize)
 
 
 const audio = new Audio('../assets/audio.mp3')
-const size = 40
+const size = 30
 
 
 

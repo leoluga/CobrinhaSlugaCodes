@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Popping", sans-serif;
+    font-family: "Audiowide";
 }
 
 body {
@@ -17,28 +17,7 @@ body {
     color: aliceblue;
 }
 
-canvas {
-    background-color: #111;
-    border: 2px solid #111;
-    border-radius: 10px;
-    position: relative;
-    margin-top: 20px;
-    
-}
 
-.score {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.8rem;
-}
-
-.score-value {
-    font-weight: 600;
-    font-size: 4rem;
-    display: block;
-    margin-top: -8px;
-}
 
 .game-over-screen {
     position: absolute;
@@ -141,38 +120,37 @@ canvas {
 }
 
 
-
   #game-container {
     position: absolute;
-    width: 650px; /* Adjust as needed */
-    height: 1000px; /* Adjust as needed */
-  }
-  
-  #rectangle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff; /* Semi-transparent black */
-    z-index: -1; /* Behind the canvas */
+    width: 80%; /* Adjust as needed */
+    height: 85%; /* Adjust as needed */
+    background-color: moccasin;
   }
 
+  #canvas {
+    background-color: #111;
+    border: 2px solid #111;
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
   #menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 1px;
     position: relative;
-    color: #ffffff;
-    top: -10px;
-    /* right: 300px; */
-    background-color: rgba(0,0,0,0.5);
+    color: #000000;
+    top: 0px;
+    background-color: rgba(0,0,0,0.2);
     border: 1px solid #cccccc4a;
     border-radius: 3px;
-    padding: 10px;
+    padding: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 2;
   }
@@ -187,7 +165,7 @@ canvas {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    color: #fff;
+    color: #000000;
   }
   
   #menu button:hover {
