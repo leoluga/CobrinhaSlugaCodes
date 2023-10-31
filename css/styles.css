@@ -132,7 +132,7 @@ body {
     height: 85%; /* Adjust as needed */
     background-color: moccasin;
     max-height: 700px;
-    max-width: 520px;
+    max-width: 490px;
     border-radius: 10px;
     margin: 10px;
   }
@@ -146,9 +146,10 @@ body {
     margin-top: 4%;
     margin-left: 2.5%;
     width: 95%;
-    max-width: 400em;
-    max-height: 300%;
-    height: 92%;
+    height: 80%;
+    max-width: 500px;
+    max-height: 600px;
+    
   }
   
   #menu {
@@ -164,7 +165,7 @@ body {
     background-color: rgba(0,0,0,0.1);
     border: 1px solid #cccccc4a;
     border-radius: 3px;
-    padding: 8px;
+    padding: 6px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 2;
     font-size: 3vw;
@@ -200,7 +201,7 @@ body {
 
   #gridSize {
     width: 15vw;
-    max-width: 80px;
+    max-width: 60px;
     height: 3vh;
     font-size: clamp(1px, 2vw, 15px);
   }
